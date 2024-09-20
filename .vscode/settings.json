@@ -57,7 +57,8 @@
     "tuple": "cpp",
     "iosfwd": "cpp",
     "iostream": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "ostream": "cpp"
   },
   "liveServer.settings.port": 5501
 }
