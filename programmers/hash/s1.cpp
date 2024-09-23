@@ -9,22 +9,19 @@ int main() {
     cin >> n;
     string str;
     cin >> str;
-    unordered_map<char, int> map;
 
-    for (int i = 0; i < n; i++) {
-        char c = str[i];
-        map[c]++;
-    }
+    unordered_map<char, int> map;
     string winner;
     int mx = 0;
+
+    for (char c: str)
+        map[c]++;
+
     for (const auto &pair: map) {
         if (pair.second > mx) {
             mx = pair.second;
             winner = pair.first;
         }
     }
-    cout << winner << '\n';
-    return 0;
-
-
+    cout << winner;
 }
