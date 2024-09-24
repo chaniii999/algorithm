@@ -7,24 +7,27 @@ int main() {
     cin.tie(0);
     int n;
     cin >> n;
+    if (n == 0) {
+        cout << 0 << '\n';
+        return 0;
+    }
     vector<int> arr(n);
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
     sort(arr.begin(), arr.end());
-
-    double pp = arr.size();
-    double mid = round(pp *0.3 + 0.5);
-    int k =(mid)/2;
-
+    int trim = round(n * 0.15);
 
     int sum = 0;
-    for (int i = k; i < arr.size()-k; i++) {
+    for (int i = trim; i < n - trim; i++) {
         sum += arr[i];
     }
-    double ans = (double)sum / ((double)arr.size() - k*2) + 0.5;
-    int a = (int)ans;
+
+    int count = n - 2 * trim;
+
+    int result = round(double(sum) / count);
+
+    cout << result << '\n';
 
 
-    cout << a;
 }
